@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-foreground: #1F2937; /* gray-800 */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #2563EB; /* blue-600 */
+    
+    /* Card & Surface Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #1F2937; /* gray-800 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1F2937; /* gray-800 */
+    
+    /* Muted Colors */
+    --color-muted: #F3F4F6; /* gray-100 */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Brand Primary Colors */
+    --color-primary: #2563EB; /* blue-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Brand Secondary Colors */
+    --color-secondary: #7C3AED; /* violet-600 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #059669; /* emerald-600 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* State Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Academic Brand Colors */
+    --color-academic-navy: #1B365D; /* custom */
+    --color-academic-navy-foreground: #FFFFFF; /* white */
+    
+    --color-scholarly-teal: #4A90A4; /* custom */
+    --color-scholarly-teal-foreground: #FFFFFF; /* white */
+    
+    --color-achievement-orange: #E67E22; /* custom */
+    --color-achievement-orange-foreground: #FFFFFF; /* white */
+    
+    --color-enrollment-orange: #D35400; /* custom */
+    --color-enrollment-orange-foreground: #FFFFFF; /* white */
+    
+    --color-professional-charcoal: #2C3E50; /* custom */
+    --color-professional-charcoal-foreground: #FFFFFF; /* white */
+    
+    --color-reading-charcoal: #2C3E50; /* custom */
+    --color-subtle-gray: #7F8C8D; /* custom */
+    
+    /* Typography Scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    
+    /* Spacing Scale (Golden Ratio) */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 0.8125rem; /* 13px */
+    --spacing-md: 1.3125rem; /* 21px */
+    --spacing-lg: 2.125rem; /* 34px */
+    --spacing-xl: 3.4375rem; /* 55px */
+    
+    /* Shadow System */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-academic: 0 4px 12px rgba(27, 54, 93, 0.1);
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    
+    /* Animation Timing */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 300ms ease-in-out;
+    --transition-slow: 400ms ease-in-out;
+    --transition-academic: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter font-semibold text-reading-charcoal;
+    line-height: 1.2;
+  }
+  
+  p {
+    @apply font-inter text-reading-charcoal;
+    line-height: 1.6;
+  }
+  
+  .text-subtle {
+    @apply text-subtle-gray;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Academic Brand Utilities */
+  .academic-shadow {
+    box-shadow: var(--shadow-academic);
+  }
+  
+  .academic-transition {
+    transition: var(--transition-academic);
+  }
+  
+  .golden-ratio-spacing > * + * {
+    margin-top: var(--spacing-md);
+  }
+  
+  /* Floating Knowledge Cards */
+  .knowledge-card {
+    @apply academic-transition;
+    transform: translateY(0);
+  }
+  
+  .knowledge-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  
+  /* Progress Gradient Animation */
+  .progress-gradient {
+    background: linear-gradient(90deg, 
+      hsl(210, 45%, 25%) 0%, 
+      hsl(35, 80%, 55%) 100%
+    );
+  }
+  
+  /* Micro-interaction Wisdom Moments */
+  .wisdom-moment {
+    @apply academic-transition;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  
+  .wisdom-moment:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+  
+  /* Academic Texture Overlay */
+  .academic-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(0.5px);
+    pointer-events: none;
+  }
+  
+  /* Scroll Snap for Mobile Optimization */
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .scroll-snap-item {
+    scroll-snap-align: start;
+  }
+  
+  /* Focus States for Accessibility */
+  .focus-academic:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Loading States */
+  .loading-shimmer {
+    background: linear-gradient(90deg, 
+      var(--color-muted) 25%, 
+      var(--color-background) 50%, 
+      var(--color-muted) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  }
+}
