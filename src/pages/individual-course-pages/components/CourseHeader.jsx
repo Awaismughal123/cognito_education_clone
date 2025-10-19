@@ -23,10 +23,13 @@ const CourseHeader = ({ course, onEnroll, isEnrolled }) => {
             </div>
 
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              {/* ✅ Title color changed to pure white */}
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight text-white">
                 {course?.title}
               </h1>
-              <p className="text-xl opacity-90 leading-relaxed">
+
+              {/* ✅ Description made slightly dimmer for contrast */}
+              <p className="text-xl text-white/80 leading-relaxed">
                 {course?.description}
               </p>
             </div>
@@ -111,11 +114,16 @@ const CourseHeader = ({ course, onEnroll, isEnrolled }) => {
               />
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                 <button className="w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white academic-transition group">
-                  <Icon name="Play" size={32} color="#1F2937" className="ml-1 group-hover:scale-110 academic-transition" />
+                  <Icon
+                    name="Play"
+                    size={32}
+                    color="#1F2937"
+                    className="ml-1 group-hover:scale-110 academic-transition"
+                  />
                 </button>
               </div>
             </div>
-            
+
             {/* Course Stats */}
             <div className="absolute -bottom-6 left-6 right-6 bg-white rounded-xl p-6 academic-shadow">
               <div className="grid grid-cols-3 gap-4 text-center">
